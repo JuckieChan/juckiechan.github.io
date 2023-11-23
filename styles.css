@@ -108,7 +108,8 @@ main {
   border-radius: 8px;
 }
 
-.topMenuEl a {
+.topMenuEl a,
+.bottomMenuEl a {
   text-decoration: none;
   color: #ffffff;
 }
@@ -118,11 +119,10 @@ main {
   background: #2c2c2c;
 }
 
-.topMenuEl:active {
+.topMenuEl:active,
+.bottomMenuEl:active {
   background: #1f1f1f;
 }
-
-
 
 .container {
   min-height: 1080px;
@@ -165,6 +165,17 @@ main {
   flex: 1;
 }
 
+.content-bar {
+  background-color: #52ae70;
+  height: 16px;
+  margin: 15px;
+  border-radius: 8px;
+}
+
+.post-wrapper {
+  border-bottom: 1px solid lightgray;
+}
+
 .post {
   margin: 15px;
   border: 1px solid lightgray;
@@ -175,12 +186,13 @@ main {
 .post-header {
   font-size: 16px;
 }
+
 .post-author {
   font-size: 11px;
   color: gray;
   border-bottom: 1px solid lightgray;
   margin-bottom: 10px;
-  padding-bottom: 8px
+  padding-bottom: 8px;
 }
 
 .post-author a {
@@ -194,4 +206,8 @@ main {
 
 .post-content p {
   margin-bottom: 5px;
+}
+
+.post-content img {
+  margin: 10px 0;
 }
