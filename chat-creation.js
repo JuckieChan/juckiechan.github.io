@@ -39,7 +39,7 @@ function getCurrentTime () {
     return String(new Date()).slice(15, 24);
 }
 function addNewMessage (author, text) {
-    chat.append(createNewMessage(author, getCurrentTime(), './media/favicon.ico', text))
+    chat.append(createNewMessage(author, getCurrentTime(), './pictures/avatar.ico', text))
     chat.lastChild.scrollIntoView({ 
         block: 'nearest',
         behavior: 'smooth',
