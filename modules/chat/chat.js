@@ -25,7 +25,7 @@ function createNewMessage (fromWho, currentTime, userPhotoUrl, text) {
     userName.textContent = fromWho;
     sendingTime.textContent = "Сегодня, в " + currentTime;
     messageContent.textContent = `${text}`;
-    img.src = userPhotoUrl;
+    img.src = fromWho === "JuckieChan" ? "./pictures/juckiechan-logo.svg" : userPhotoUrl;
 
     userPhoto.append(img);
     userInfo.append(userName, sendingTime, bottomBorder)
@@ -39,7 +39,7 @@ function getCurrentTime () {
     return String(new Date()).slice(15, 24);
 }
 function addNewMessage (author, text) {
-    chat.append(createNewMessage(author, getCurrentTime(), './pictures/avatar.ico', text))
+    chat.append(createNewMessage(author, getCurrentTime(), './pictures/no-avatar.png', text))
     chat.scrollTo({
         top: 9999,
         behavior: "smooth"
@@ -60,3 +60,6 @@ addNewMessageWithTimeout('JuckieChan', `От души бро`, 42000)
 addNewMessageWithTimeout('pro100gamer2013', `лан я пашол гамать чао какао`, 49000)
 addNewMessageWithTimeout('Luksor', `И что это было?...`, 55000)
 addNewMessageWithTimeout('Stark-333', `Хз))`, 58000)
+
+// сделать класс User с пользователями и тд, использовать его при отправке сообщений
+// сделать объект с группами пользователей с парой ключ-название и значение-цвет

@@ -1,0 +1,39 @@
+.clouds {
+    overflow: hidden;
+    z-index: -1;
+}
+
+.clouds, .far-clouds, .near-clouds {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+}
+
+.far-clouds, .near-clouds {
+    background-repeat: repeat-x;
+}
+
+.far-clouds {
+    background-image: url(/pictures/far-clouds.png);
+    background-position-y: 166px;
+    animation: far-clouds-animation 210s infinite linear
+}
+
+.near-clouds {
+    background-image: url(/pictures/near-clouds.png);
+    background-position-y: 226px;
+    animation: near-clouds-animation 80s infinite linear
+}
+
+@keyframes far-clouds-animation {
+    to {
+        background-position: -2048px 166px;
+    }
+}
+
+@keyframes near-clouds-animation {
+    to {
+        background-position: -1268px 226px;
+    }
+}
