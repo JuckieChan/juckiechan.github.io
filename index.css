@@ -89,7 +89,6 @@ footer {
     }
     50% {
         transform: scaleX(0);
-        fill: #000000;
     }
     90% {
         transform: scaleX(0.95);
