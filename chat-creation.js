@@ -40,10 +40,10 @@ function getCurrentTime () {
 }
 function addNewMessage (author, text) {
     chat.append(createNewMessage(author, getCurrentTime(), './pictures/avatar.ico', text))
-    chat.lastChild.scrollIntoView({ 
-        block: 'nearest',
-        behavior: 'smooth',
-    });
+    chat.scrollTo({
+        top: 9999,
+        behavior: "smooth"
+      });
 }
 
 const addNewMessageWithTimeout = (author, text, timeout) => setTimeout(() => addNewMessage(author, text), timeout)
