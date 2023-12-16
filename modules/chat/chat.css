@@ -48,9 +48,9 @@
     padding-left: 6px;
 }
 
-.chat-user-info span,
-a {
+.chat-user-info a {
     font-size: 13px;
+    color: #3333FF;
 }
 
 .bottom-border {
@@ -58,11 +58,28 @@ a {
     border-bottom: 1px solid #dbe8ed;
 }
 
-.user-name {
-    color: #3333ff;
+.user-name[data-role="admin"] {
+    color: #ff0000;
+}
+
+.user-name[data-role="moderator"] {
+    color: #ff8c00;
+}
+
+.user-name[data-role="troll"] {
+    color: #79c403;
+}
+
+.user-name[data-role="vip"] {
+    color: #8c00ff;
+}
+
+.user-name[data-role="user"] {
+    color: #0000ff;
 }
 
 .sending-time {
+    font-size: 11px;
     color: #969696;
 }
 

@@ -1,22 +1,48 @@
+:root {
+    --main-backgound: #ffffff;
+    --main-text: #000000;
+    --border: #cccccc;
+
+    --content-bar: #52ae70;
+
+    --sidebar-backgound: #f1f0ed;
+    --sidebar-shader: #bbbbbb;
+
+    --header-footer-background: #121212;
+    --header-footer-text: #ffffff;
+
+    --menu-background: #3b3b3b;
+    --menu-el-text: #ffffff;
+    --menu-el-hover-background: #2c2c2c;
+    --menu-el-active-background: #1f1f1f;
+
+    --box-shadow: #000000;
+
+    --auth-button-background: #008246;
+    --auth-button-text-shadow: #44a670;
+    --auth-button-light-border: #00bb00;
+    --auth-button-dark-border: #006400;
+    --auth-button-active-background: #00944f;
+}
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     font-family: Verdana, sans-serif;
     font-size: 13px;
+    /* color: var(--main-text); */
 }
 
-header,
-footer {
+header, footer {
     height: 65px;
     width: 100%;
-    background: #121212;
-    color: #ffffff;
+    background: var(--header-footer-background);
+    color: var(--header-footer-text);
     padding: 10px 0px;
 }
 
-.headerContent,
-.footerContent {
+.headerContent, .footerContent {
     min-width: 800px;
     max-width: 1140px;
     height: 45px;
@@ -40,12 +66,16 @@ footer {
 
 .that-god-damn-green-button {
     color: #121212;
-    text-shadow: 0 1px 2px #44a670;
+    text-shadow: 0 1px 2px var(--auth-button-text-shadow);
     font-weight: bold;
     font-size: 12px;
-    background-color: #008246;
+    background-color: var(--auth-button-background);
     border: 1px solid;
-    border-color: #00bb00 #006400 #006400 #00bb00;
+    border-color: 
+        var(--auth-button-light-border) 
+        var(--auth-button-dark-border) 
+        var(--auth-button-dark-border) 
+        var(--auth-button-light-border);
     border-radius: 10px;
     padding: 8px 12px;
     margin: 6px;
@@ -55,11 +85,15 @@ footer {
 }
 
 .that-god-damn-green-button:active {
-    border-color: #006400 #00bb00 #00bb00 #006400;
+    border-color:
+        var(--auth-button-dark-border)
+        var(--auth-button-light-border)
+        var(--auth-button-light-border)
+        var(--auth-button-dark-border);
 }
 
 .that-god-damn-green-button:hover {
-    background-color: #00944f;
+    background-color: var(--auth-button-active-background);
 }
 
 .footerContent {
@@ -118,7 +152,7 @@ body {
 
 .topMenu,
 .bottomMenu {
-    background: #3b3b3b;
+    background: var(--menu-background);
     font-weight: bold;
     min-width: 800px;
     max-width: 1140px;
@@ -127,7 +161,7 @@ body {
     padding: 2px 0px;
     border-radius: 8px;
     display: flex;
-    box-shadow: -5px 5px 20px -10px #000000;
+    box-shadow: -5px 5px 20px -10px var(--box-shadow);
 }
 
 .topMenuEl,
@@ -144,17 +178,17 @@ body {
 .topMenuEl a,
 .bottomMenuEl a {
     text-decoration: none;
-    color: #ffffff;
+    color: var(--menu-el-text);
 }
 
 .topMenuEl:hover,
 .bottomMenuEl:hover {
-    background: #2c2c2c;
+    background: var(--menu-el-hover-background);
 }
 
 .topMenuEl:active,
 .bottomMenuEl:active {
-    background: #1f1f1f;
+    background: var(--menu-el-active-background);
 }
 
 .container {
@@ -164,18 +198,18 @@ body {
     margin: 0px auto;
     display: flex;
     border-radius: 8px;
-    box-shadow: -5px 5px 20px -10px #000000;
+    box-shadow: -5px 5px 20px -10px var(--box-shadow);
 }
 
 .sidebar {
-    background: linear-gradient(270deg, #bbbbbb, #f1f0ed 10%);
+    background: linear-gradient(270deg, var(--sidebar-shader), var(--sidebar-backgound) 20px);
     width: 330px;
     border-radius: 8px 0px 0px 8px;
 }
 
 .sidebarBlock {
-    border: 1px solid lightgray;
-    background-color: #ffffff;
+    border: 1px solid var(--border);
+    background-color: var(--main-backgound);
     border-radius: 8px;
     margin: 15px 25px 15px 15px;
 }
@@ -184,7 +218,7 @@ body {
     height: 40px;
     line-height: 40px;
     padding: 0px 15px;
-    border-bottom: 1px solid #c0c0c0;
+    border-bottom: 1px solid var(--border);
     font-size: 17px;
 }
 
@@ -193,25 +227,25 @@ body {
 }
 
 .content {
-    background-color: #ffffff;
+    background-color: var(--main-backgound);
     border-radius: 0px 8px 8px 0px;
     flex: 1;
 }
 
 .content-bar {
-    background-color: #52ae70;
+    background-color: var(--content-bar);
     height: 16px;
     margin: 15px;
     border-radius: 8px;
 }
 
 .post-wrapper {
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid var(--border);
 }
 
 .post {
     margin: 15px;
-    border: 1px solid lightgray;
+    border: 1px solid var(--border);
     border-radius: 8px;
     padding: 15px;
 }
@@ -223,7 +257,7 @@ body {
 .post-author {
     font-size: 11px;
     color: gray;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid var(--border);
     margin-bottom: 10px;
     padding-bottom: 8px;
 }
@@ -240,3 +274,34 @@ body {
 .post-content img {
     margin: 10px 0;
 }
+
+
+/* @media (prefers-color-scheme: dark) {
+    :root {
+        --main-backgound: #222222;
+        --main-text: #ffffff;
+        
+        --border: rgb(0, 0, 0);
+    
+        --content-bar: #52ae70;
+    
+        --sidebar-backgound: #131313;
+        --sidebar-shader: #000000;
+    
+        --header-footer-background: #121212;
+        --header-footer-text: #ffffff;
+    
+        --menu-background: #3b3b3b;
+        --menu-el-text: #ffffff;
+        --menu-el-hover-background: #2c2c2c;
+        --menu-el-active-background: #1f1f1f;
+    
+        --box-shadow: #000000;
+    
+        --auth-button-background: #008246;
+        --auth-button-text-shadow: #44a670;
+        --auth-button-light-border: #00bb00;
+        --auth-button-dark-border: #006400;
+        --auth-button-active-background: #00944f;
+    } 
+} */
