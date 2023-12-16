@@ -2,7 +2,8 @@
 
 import { users } from '../users-alpha/users-alpha.js'
 
-const chat = document.querySelector('#chat');
+const messageBox = document.querySelector('.message-box');
+const chatInput = document.querySelector('.chat-input');
 
 function createNewMessage (userId, currentTime, text) {
     const message = document.createElement('div');
@@ -44,37 +45,50 @@ function getCurrentTime () {
 
 let isChatFullScrolled = true;
 
-chat.addEventListener("scroll", () => {
-    isChatFullScrolled = chat.scrollHeight === chat.scrollTop + 350 ? true : false;
+messageBox.addEventListener("scroll", () => {
+    isChatFullScrolled = messageBox.scrollHeight === messageBox.scrollTop + 350 ? true : false;
 })    
 
 function addNewMessage (userID, text) {
-    chat.append(createNewMessage(users[userID], getCurrentTime(), text))
+    messageBox.append(createNewMessage(users[userID], getCurrentTime(), text))
     if (isChatFullScrolled) {
-        chat.scrollTo({
+        messageBox.scrollTo({
             top: 9999,
             behavior: "smooth"
         });
     }
 }
 
-
 const addNewMessageWithTimeout = (author, text, timeout) => setTimeout(() => addNewMessage(author, text), timeout)
 
-addNewMessageWithTimeout('id_000001', `Тест`, 1000)
-addNewMessageWithTimeout('id_000001', `Тест`, 1000)
-addNewMessageWithTimeout('id_000001', `Тест`, 1000)
-addNewMessageWithTimeout('id_000001', `Тест`, 1000)
+addNewMessageWithTimeout('id_000001', `Тест`, 0)
+addNewMessageWithTimeout('id_000001', `Тест`, 0)
+addNewMessageWithTimeout('id_000001', `<p>Тест</p>`, 0)
+addNewMessageWithTimeout('id_000001', `Тест`, 0)
+addNewMessageWithTimeout('id_000002', `Ща банхаммером получишь за флуд`, 0)
+addNewMessageWithTimeout('id_000001', `Попутал штоле?)`, 0)
+addNewMessageWithTimeout('id_000002', `Та я угараю))`, 0)
 
 addNewMessageWithTimeout('id_000002', `А чо там чат починили чишо?`, 1000)
 addNewMessageWithTimeout('id_000003', `та нет канечно кагда там чат админы пачинят сто лет прайдет`, 10000)
 addNewMessageWithTimeout('id_000004', `Букварь этому господину`, 16000)
 addNewMessageWithTimeout('id_000003', `себе купи`, 20000)
-addNewMessageWithTimeout('id_000001', `К сожалению, с чатом возникли некоторые трудности, просьба отнестись к этому с пониманием. Это касается только новых пользователей, вы можете общаться как и раньше.`, 23000)
-addNewMessageWithTimeout('id_000003', `я же гаварил`, 29000)
-addNewMessageWithTimeout('id_000001', `Терпение, друзья. Как только так сразу.`, 36000)
+addNewMessageWithTimeout('id_000004', `Я его хотя-бы открывал...`, 24000)
+addNewMessageWithTimeout('id_000001', `К сожалению, с чатом возникли некоторые трудности, просьба отнестись к этому с пониманием. Это касается только новых пользователей, вы можете общаться как и раньше.`, 25000)
+addNewMessageWithTimeout('id_000003', `я же гаварил`, 31000)
+addNewMessageWithTimeout('id_000001', `Терпение, друзья. Как только так сразу.`, 38000)
 addNewMessageWithTimeout('id_000004', `Макс, там это, пиши если помощь нужна, поможем чем сможем`, 39000)
 addNewMessageWithTimeout('id_000001', `От души бро`, 42000)
+addNewMessageWithTimeout('id_000005', `ыыаыаыаыаыыаыаы`, 45000)
 addNewMessageWithTimeout('id_000003', `лан я пашол гамать чао какао`, 49000)
 addNewMessageWithTimeout('id_000002', `И что это было?...`, 55000)
 addNewMessageWithTimeout('id_000004', `Хз))`, 58000)
+
+chatInput.addEventListener('keydown', (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        addNewMessage("id_000000", chatInput.value)
+        chatInput.value = '';
+        chatInput.focus();
+    }
+})

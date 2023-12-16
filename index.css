@@ -64,7 +64,7 @@ header, footer {
     display: flex;
 }
 
-.that-god-damn-green-button {
+.auth-button {
     color: #121212;
     text-shadow: 0 1px 2px var(--auth-button-text-shadow);
     font-weight: bold;
@@ -82,9 +82,10 @@ header, footer {
     text-align: center;
     cursor: pointer;
     user-select: none;
+    text-decoration: none;
 }
 
-.that-god-damn-green-button:active {
+.auth-button:active {
     border-color:
         var(--auth-button-dark-border)
         var(--auth-button-light-border)
@@ -92,7 +93,7 @@ header, footer {
         var(--auth-button-dark-border);
 }
 
-.that-god-damn-green-button:hover {
+.auth-button:hover {
     background-color: var(--auth-button-active-background);
 }
 
@@ -239,7 +240,7 @@ body {
     border-radius: 8px;
 }
 
-.post-wrapper {
+.post-wrapper:not(:last-child) {
     border-bottom: 1px solid var(--border);
 }
 
@@ -265,6 +266,9 @@ body {
 .post-author a {
     font-size: 11px;
     color: #40aabb;
+}
+.post-content {
+    text-align: center;
 }
 
 .post-content p {

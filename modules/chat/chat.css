@@ -1,4 +1,4 @@
-#chat {
+.message-box {
     height: 350px;
     width: 100%;
     border-radius: 8px;
@@ -78,6 +78,10 @@
     color: #0000ff;
 }
 
+.user-name[data-role="guest"] {
+    color: #8b8b8b;
+}
+
 .sending-time {
     font-size: 11px;
     color: #969696;
@@ -89,4 +93,15 @@
     text-align: left;
     padding: 5px 3px 3px 3px;
     word-wrap: break-word;
+}
+
+.chat-input {
+    border-radius: 4px;
+    border-color: lightgrey;
+    width: 100%;
+    padding: 5px;
+    min-height: 60px;
+	max-height: 300px;
+    outline: none;
+    resize: vertical;
 }
