@@ -51,6 +51,7 @@
 .chat-user-info a {
     font-size: 13px;
     color: #3333FF;
+    text-decoration: none;
 }
 
 .bottom-border {
@@ -104,4 +105,27 @@
 	max-height: 300px;
     outline: none;
     resize: vertical;
+}
+
+.message-box::-webkit-scrollbar {
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    width: 10px;
+}
+
+.message-box::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+.message-box::-webkit-scrollbar-thumb {
+    background: #c1c1c1; 
+    border-radius: 5px;
+}
+
+.message-box::-webkit-scrollbar-thumb:hover {
+    background: #adadad; 
+}
+
+.message-box::-webkit-scrollbar-thumb:active {
+    background: #979797; 
 }

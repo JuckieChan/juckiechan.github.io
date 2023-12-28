@@ -21,7 +21,8 @@ function createNewMessage (userId, currentTime, text) {
     userPhoto.classList.add("user-photo");
     userInfo.classList.add("chat-user-info");
     userName.classList.add("user-name");
-    userName.setAttribute("data-role", `${userId.role}`)
+    userName.setAttribute("data-role", `${userId.role}`);
+    userName.setAttribute("href", "#");
     sendingTime.classList.add("sending-time");
     bottomBorder.classList.add("bottom-border");
     messageContent.classList.add("message-content");
@@ -53,7 +54,7 @@ function addNewMessage (userID, text) {
     messageBox.append(createNewMessage(users[userID], getCurrentTime(), text))
     if (isChatFullScrolled) {
         messageBox.scrollTo({
-            top: 9999,
+            top: messageBox.scrollHeight,
             behavior: "smooth"
         });
     }
@@ -67,7 +68,7 @@ addNewMessageWithTimeout('id_000001', `<p>Тест</p>`, 0)
 addNewMessageWithTimeout('id_000001', `Тест`, 0)
 addNewMessageWithTimeout('id_000002', `Ща банхаммером получишь за флуд`, 0)
 addNewMessageWithTimeout('id_000001', `Попутал штоле?)`, 0)
-addNewMessageWithTimeout('id_000002', `Та я угараю))`, 0)
+addNewMessageWithTimeout('id_000002', `Та я угараю :D`, 0)
 
 addNewMessageWithTimeout('id_000002', `А чо там чат починили чишо?`, 1000)
 addNewMessageWithTimeout('id_000003', `та нет канечно кагда там чат админы пачинят сто лет прайдет`, 10000)
@@ -87,8 +88,17 @@ addNewMessageWithTimeout('id_000004', `Хз))`, 58000)
 chatInput.addEventListener('keydown', (event) => {
     if (event.key === "Enter") {
         event.preventDefault();
-        addNewMessage("id_000000", chatInput.value)
+        const userMessage = chatInput.value.replace(/\s+/g, " ").trim()
+        if (userMessage) {
+            addNewMessage("id_000000", userMessage.replace(/(.)\1{2,}/gi, "$1$1$1"))
+            messageBox.scrollTo({
+                top: messageBox.scrollHeight,
+                behavior: "smooth"
+            });
+            chatInput.focus();
+        } else {
+            chatInput.blur();
+        }
         chatInput.value = '';
-        chatInput.focus();
     }
 })

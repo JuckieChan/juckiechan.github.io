@@ -19,6 +19,6 @@ const users = {
     id_000004: new User ("Stark-333", "Эцио", "Аудиторе", "ecio@assasin.com", "ihatetampliers", "attack helikopter", "vip", "/modules/users-alpha/user-photos/id_000004.png"),
     id_000005: new User ("ewauaewauauew", "ыаыаы", "уауауаау", "euaaueeueau@gmail.com", "ueueuauau", "male", "troll", "modules/users-alpha/user-photos/id_000005.gif"),
     id_000006: new User ("Mithrandir", "Гендальф", "Серый", "gendalf-gray@gmail.com", "ilovehobbits", "male", "vip", ""),
-}
+} // вместо объекта использовать массив и вместо id_0000* использовать индекс
 
 export {users}

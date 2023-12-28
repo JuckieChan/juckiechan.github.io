@@ -1,0 +1,30 @@
+body::-webkit-scrollbar {
+    background-color: var(--header-footer-background);
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #008d4b; 
+    border-radius: 4px;
+    border: 1px solid var(--header-footer-background);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #009c53; 
+}
+
+body::-webkit-scrollbar-button {
+    height: 65px;
+}
+
+/*
+::-webkit-scrollbar — это фон самого скроллбара.
+::-webkit-scrollbar-button — кнопки направления на полосе прокрутки.
+::-webkit-scrollbar-track — пустое пространство под индикатором прокрутки.
+::-webkit-scrollbar-thumb — индикатор прокрутки, перетаскиваемый элемент.
+*/
+

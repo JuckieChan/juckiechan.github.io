@@ -3,13 +3,16 @@
     <head>
         <meta charset="UTF-8" />
         <link href="./index.css" rel="stylesheet" />
+        <script defer src="index.js"></script>
 
         <link href="./modules/regform-alpha/regform-alpha.css" rel="stylesheet" />
         <link href="./modules/chat/chat.css" rel="stylesheet" />
         <link href="./modules/background-clouds/clouds.css" rel="stylesheet" />
+        <link href="./modules/login-popup/login-popup.css" rel="stylesheet" />
+        <link href="./modules/scrollbar/scrollbar.css" rel="stylesheet" />
 
         <script defer src="./modules/regform-alpha/regform-alpha.js"></script>
-        <script type="module" defer src="./modules/chat/chat.js"></script>
+        <script defer type="module" src="./modules/chat/chat.js"></script>
         <script defer src="./modules/background-clouds/clouds.js"></script>
 
         <link rel="icon" href="./pictures/terraria.ico" type="image/x-icon" />
@@ -31,8 +34,8 @@
                     />
                 </div>
                 <div class="authorization">
-                    <a href="#" class="auth-button">Регистрация</a>
-                    <a href="#" class="auth-button">Войти</a>
+                    <button id="registration-button" class="auth-button">Регистрация</button>
+                    <button id="login-button" class="auth-button">Войти</button>
                 </div>
             </div>
         </header>
