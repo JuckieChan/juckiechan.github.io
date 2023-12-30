@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 function createBackgroundClouds () {
     const clouds = document.createElement("div");
     clouds.className = "clouds"

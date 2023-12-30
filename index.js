@@ -1,6 +1,6 @@
 // history.replaceState(null, null, 'terrariago.net');
 
-function showLoginPopupWindow () {
+function createLoginPopupWindow () {
     const popup = document.createElement("div")
     popup.className = "login-popup";
     
@@ -25,23 +25,23 @@ function showLoginPopupWindow () {
     popup.append(popupBackground, popupWindow)
     document.body.prepend(popup);
 
-    setTimeout(() => {
-        popupBackground.style.opacity = ".8"
-    }, 0);
+    setTimeout(() => popupBackground.style.opacity = ".8", 0);
+    setTimeout(() => popupWindow.style.opacity = "1", 100);
 
-    setTimeout(() => {
-        popupWindow.style.opacity = "1"
-    }, 100);
+    const popupCloseButton = popupWindow.querySelector(".login-popup-close-button");
 
-
-    popupBackground.addEventListener("click", () => {
+    function closePopup () {
         popupBackground.style.opacity = "0"
+        popupBackground.style.pointerEvents = "none"
         popupWindow.style.opacity = "0"
         setTimeout(() => {
             popup.remove()
         }, 1000);
-    })
+    }
+
+    popupCloseButton.addEventListener("click", closePopup)
+    popupBackground.addEventListener("click", closePopup)
     
 }
 
-document.querySelector("#login-button").addEventListener("click", () => showLoginPopupWindow())
+document.querySelector("#login-button").addEventListener("click", () => createLoginPopupWindow())

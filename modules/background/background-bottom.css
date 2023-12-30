@@ -1,0 +1,25 @@
+.background-forest, .background-mountains, .background-bottom-gradient {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.background-forest, .background-mountains {
+    height: 100%;
+}
+
+.background-forest {
+    background: url(/pictures/background-forest-winter.png) right bottom repeat-x;
+    opacity: .6;
+}
+
+.background-mountains {
+    background: url(/pictures/background-mountains-winter.png) right bottom repeat-x;
+}
+
+.background-bottom-gradient {
+    bottom: 65px;
+    height: 100px;
+    background: linear-gradient(0deg, rgb(30 35 65), transparent)
+}
