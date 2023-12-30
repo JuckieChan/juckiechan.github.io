@@ -50,6 +50,12 @@
 }
 
 .login-popup-content-wrapper input{
+    display: block;
+    width: 100%;
+    height: 30px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    padding: 0 6px;
     margin-top: 3px;
     margin-bottom: 10px;
 }

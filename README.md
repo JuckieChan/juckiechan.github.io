@@ -7,3 +7,9 @@ Revival of former greatness
 - ChangeLog initialization
 - login popup window fixes (immediately pointerEvents support after closing popup, exit button now works)
 - added background mountains and dark-blue gradient at the bottom of page
+
+### v1.0.2
+- post class initial
+- added new posts rendering feature
+- added registration rules page
+- login popup input styles fix

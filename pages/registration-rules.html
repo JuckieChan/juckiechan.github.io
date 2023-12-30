@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <link href="/index.css" rel="stylesheet" />
+
+        <link href="/modules/chat/chat.css" rel="stylesheet" />
+        <link href="/modules/background/clouds.css" rel="stylesheet" />
+        <link href="/modules/background/background-bottom.css" rel="stylesheet" />
+        <link href="/modules/login-popup/login-popup.css" rel="stylesheet" />
+        <link href="/modules/scrollbar/scrollbar.css" rel="stylesheet" />
+        
+        <link href="/pages/registration.css" rel="stylesheet" />
+        
+        <script defer type="module" src="/modules/chat/chat.js"></script>
+        <script defer src="/modules/background/clouds.js"></script>
+        <script defer src="/modules/background/background-bottom.js"></script>
+        <script defer src="/modules/login-popup/login-popup.js"></script>
+
+        <link rel="icon" href="/pictures/terraria.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/pictures/terraria.ico" type="image/x-icon" />
+
+        <title>TerrariaGO - Регистрация нового пользователя</title>
+    </head>
+
+    <body>
+        <header>
+            <div class="headerContent">
+                <div class="mainLogo">
+                    <img src="/pictures/mainLogo.png" alt="mainLogo" />
+                </div>
+                <div class="advertisement">
+                    <img src="advertisement.png" alt="error-404: реклама отсутствует. Стань первым!" />
+                </div>
+                <div class="authorization">
+                    <button id="registration-button" class="auth-button">Регистрация</button>
+                    <button id="login-button" class="auth-button">Войти</button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="spacer"></div>
+            <div class="topMenu">
+                <div class="topMenuEl"><a href="/index.html">Главная</a></div>
+                <div class="topMenuEl">Скачать</div>
+                <div class="topMenuEl">Новости</div>
+                <div class="topMenuEl">Конкурсы</div>
+                <div class="topMenuEl">Статьи</div>
+                <div class="topMenuEl">Видео</div>
+                <div class="topMenuEl">Новичкам</div>
+                <div class="topMenuEl">О проекте</div>
+            </div>
+            <div class="spacer"></div>
+            <div class="container">
+                <div class="sidebar">
+                    <div class="sidebarBlock">
+                        <div class="sidebarBlockHeader">Наш шизо-чат</div>
+                        <div class="sidebarBlockContent">
+                            <div id="chat">
+                                <div class="message-box">
+
+                                </div>
+                                <textarea class="chat-input"  placeholder="Введите сообщение"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebarBlock">
+                        <div class="sidebarBlockHeader">Сейчас онлайн</div>
+                        <div class="sidebarBlockContent">
+                            <div class="mainUsers">
+                                <div class="users"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-bar"></div>
+                    <div class="post">
+                        <p><b>Общие правила поведения на сайте:</b></p>
+                        <br>
+                        <p>Начнем с того, что на сайте общаются сотни людей, разных религий и взглядов, и все они являются полноправными посетителями нашего сайта, поэтому если мы хотим чтобы это сообщество людей функционировало нам и необходимы правила. Мы настоятельно рекомендуем прочитать настоящие правила, это займет у вас всего минут пять, но сбережет нам и вам время и поможет сделать сайт более интересным и организованным.</p>
+                        <br>
+                        <p>На нашем сайте нужно вести себя уважительно ко всем посетителям сайта. Не надо оскорблений по отношению к участникам, это всегда лишнее. Если есть претензии - обращайтесь к Админам или Модераторам (воспользуйтесь личными сообщениями). Оскорбление других посетителей считается у нас одним из самых тяжких нарушений и строго наказывается администрацией. <b>У нас строго запрещен расизм, религиозные и политические высказывания.</b> Заранее благодарим вас за понимание и за желание сделать наш сайт более вежливым и дружелюбным.</p>
+                        <br>
+                        <p><b>На сайте строго запрещено:</b></p>
+                        <br>
+                        <p>- сообщения, не относящиеся к содержанию статьи или к контексту обсуждения;</p>
+                        <p>- оскорбления и угрозы в адрес посетителей сайта;</p>
+                        <p>- в комментариях запрещаются выражения, содержащие ненормативную лексику, унижающие человеческое достоинство, разжигающие межнациональную рознь;</p>
+                        <p>- спам, а также реклама любых товаров и услуг, иных ресурсов, СМИ или событий, не относящихся к контексту обсуждения статьи.</p>
+                        <br>
+                        <p>Давайте будем уважать друг друга и сайт, на который Вы и другие читатели приходят пообщаться и высказать свои мысли. Администрация сайта оставляет за собой право удалять комментарии или часть комментариев, если они не соответствуют данным требованиям.</p>
+                        <br>
+                        <p>При нарушении правил вам может быть дано <b>предупреждение</b>. В некоторых случаях может быть дан бан <b>без предупреждений</b>. По вопросам снятия бана писать администратору.</p>
+                        <br>
+                        <p><b>Оскорбление</b> администраторов или модераторов также караются <b>баном</b> - уважайте чужой труд.</p>
+                        <br>
+                        <div class="registration-rules-button-wrapper">
+                            <a class="registration-rules-button" href="/pages/registration-form.html">Принимаю</a>
+                            <a class="registration-rules-button" href="/index.html">Не принимаю</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="spacer"></div>
+            <div class="bottomMenu">
+                <div class="bottomMenuEl">
+                    <a href="/index.html">Главная страница</a>
+                </div>
+                <div class="bottomMenuEl">Регистрация</div>
+                <div class="bottomMenuEl">Статистика</div>
+                <div class="bottomMenuEl">Непрочитанное</div>
+                <div class="bottomMenuEl">Комментарии</div>
+            </div>
+            <div class="spacer"></div>
+        </main>
+
+        <footer>
+            <div class="footerContent">
+                <div class="miniLogo">
+                    <img id="miniLogo" src="/pictures/terraria.ico" alt="miniLogo" />
+                </div>
+                <div class="copyright">
+                    Project TerrariaGO. All rights reserved.
+                    <br />
+                    Дата создания сайта: 19.11.2023
+                </div>
+                <div class="contacts">
+                    <p>juckiechan@mail.ru</p>
+                    <p>luksor144@gmail.com</p>
+                </div>
+                <div class="juckiechan-logo">
+                    <img id="juckiechan-logo" src="/pictures/juckiechan-logo-white.svg" alt="miniLogo" />
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
