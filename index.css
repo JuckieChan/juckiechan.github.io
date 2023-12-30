@@ -140,7 +140,7 @@ header, footer {
 
 .contacts {
     margin-left: auto;
-    text-align: center;
+    text-align: right;
 }
 
 body {
@@ -241,6 +241,30 @@ body {
     border-radius: 8px;
 }
 
+/* <div class="post">
+    <div class="post-header-wrapper">
+        <div class="post-header">
+            <a href="#" class="post-name">Название поста</a>
+            <a href="#" class="post-info">Автор: <a href="#">${this.postAuthor}</a> от <a href="#">${this.postDate}</a>, просмотров: 1</a>
+        </div>
+        <div class="post-comments">20</div>
+    </div>
+        
+    <div class="post-content">
+        ${this.postContent}
+    </div>
+
+    <div class="post-footer">
+        <div class="post-rating">
+            <button>-</button> +2 <button>+</button>
+        </div>
+        <a href="#" class="details">Подробнее</a>
+    </div>
+
+    <div class="post-category">> Категория: Новости</div>
+</div> */
+
+
 .post-wrapper:not(:last-child) {
     border-bottom: 1px solid var(--border);
 }
@@ -249,25 +273,69 @@ body {
     margin: 15px;
     border: 1px solid var(--border);
     border-radius: 8px;
-    padding: 15px;
+    padding: 10px 15px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.post-header-wrapper {
+    display: flex;
+    height: 45px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    gap: 10px;
 }
 
 .post-header {
-    font-size: 16px;
+    height: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
-.post-author {
+.post-name {
+    display: block;
+    font-size: 16px;
+    color: var(--main-text);
+    text-decoration: none;
+}
+
+.post-name:hover {
+    text-decoration: underline;
+}
+
+.post-info, .post-category {
+    display: block;
     font-size: 11px;
     color: gray;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 10px;
-    padding-bottom: 8px;
 }
 
-.post-author a {
+.post-info a {
     font-size: 11px;
     color: #40aabb;
+    text-decoration: none;
 }
+
+.post-info a:hover {
+    text-decoration: underline;
+}
+
+.post-comments {
+    background: url(/pictures/comments-icon.png);
+    color: #333333;
+    padding: 2px 3px 10px 3px;
+    font-size: 25px;
+    font-weight: bold;
+    height: 40px;
+    width: 50px;
+    text-align: center;
+}
+
 .post-content {
     text-align: center;
 }
@@ -278,6 +346,77 @@ body {
 
 .post-content img {
     margin: 10px 0;
+}
+
+.post-footer {
+    height: 35px;
+    /* border: 1px solid var(--border); */
+    background: var(--sidebar-backgound);
+    border-radius: 8px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.post-rating, .post-details {
+    color: #ffffff;
+    font-size: 11px;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    width: 90px;
+    height: 28px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-decoration: none;
+    margin-right: 4px;
+}
+
+.post-rating {
+    border: 1px solid #006090;
+    box-shadow: inset 0 1px #66bde8;
+    background: #4385b4;
+}
+
+.post-details {
+    border: 1px solid #283b22;
+    box-shadow: inset 0 1px #409925;
+    background: #005428;
+}
+
+.post-details:hover {
+    text-decoration: underline;
+}
+
+.post-rating-down, .post-rating-up {
+    /* position: relative; */
+    cursor: pointer;
+    border: none;
+    height: 12px;
+    width: 12px;
+    background: url(/pictures/rating-icons.png) no-repeat;
+}
+
+.post-rating-down::after, .post-rating-up::after {
+    content: "";
+    /* position: absolute; */
+    width: 25px;
+    height: 25px;
+    transform: translate(-50%, -50%);
+}
+
+.post-rating-down {
+    background-position: -12px -12px;
+}
+.post-rating-up {
+    background-position: 0 -12px;
+}
+.post-rating-down:hover {
+    background-position: -12px 0;
+}
+.post-rating-up:hover {
+    background-position: 0 0;
 }
 
 

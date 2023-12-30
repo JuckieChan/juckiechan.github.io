@@ -13,3 +13,7 @@ Revival of former greatness
 - added new posts rendering feature
 - added registration rules page
 - login popup input styles fix
+
+### v1.1
+- post styles and html major update
+- voting feature pre-initial
