@@ -248,22 +248,29 @@ body {
 .content-bar {
     background-color: var(--content-bar);
     height: 16px;
-    margin: 15px;
+    margin: 15px 15px 0 15px;
     border-radius: 8px;
 }
 
 /* posts */
 
+.post-wrapper {
+    padding: 15px;
+}
+
 .post-wrapper:not(:last-child) {
     border-bottom: 1px solid var(--border);
 }
 
+.post-wrapper:not(:first-child) {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15), #ffffff 4px);
+}
+
+
 .post {
-    margin: 15px;
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 10px 15px;
-
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -287,14 +294,13 @@ body {
     justify-content: space-evenly;
 }
 
-.post-name {
-    display: block;
+.post-name a {
     font-size: 16px;
     color: var(--main-text);
     text-decoration: none;
 }
 
-.post-name:hover {
+.post-name a:hover {
     text-decoration: underline;
 }
 
@@ -339,13 +345,12 @@ body {
 
 .post-footer {
     height: 35px;
-    /* border: 1px solid var(--border); */
     background: var(--sidebar-backgound);
     border-radius: 8px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .post-rating, .post-details {
@@ -385,7 +390,7 @@ body {
 }
 
 .post-rating-down, .post-rating-up {
-    /* position: relative; */
+    position: relative;
     cursor: pointer;
     border: none;
     height: 12px;
@@ -395,9 +400,9 @@ body {
 
 .post-rating-down::after, .post-rating-up::after {
     content: "";
-    /* position: absolute; */
-    width: 25px;
-    height: 25px;
+    position: absolute;
+    width: 24px;
+    height: 24px;
     transform: translate(-50%, -50%);
 }
 

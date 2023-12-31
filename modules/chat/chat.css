@@ -4,7 +4,6 @@
     border-radius: 8px;
     margin-bottom: 10px;
     overflow: auto;
-    color: black;
 }
 
 .message {
@@ -37,9 +36,6 @@
 }
 
 .chat-user-info {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
     text-align: left;
     border-top-right-radius: 6px;
     height: 34px;
@@ -48,15 +44,18 @@
     padding-left: 6px;
 }
 
-.chat-user-info a {
-    font-size: 13px;
-    color: #3333FF;
-    text-decoration: none;
-}
-
 .bottom-border {
     margin-top: 4px;
     border-bottom: 1px solid #dbe8ed;
+}
+
+.user-name {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.user-name:hover {
+    text-decoration: underline;
 }
 
 .user-name[data-role="admin"] {
@@ -84,6 +83,7 @@
 }
 
 .sending-time {
+    display: inline-block;
     font-size: 11px;
     color: #969696;
 }

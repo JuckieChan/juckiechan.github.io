@@ -33,3 +33,9 @@ Revival of former greatness
 ### v1.1.2
 - voting feature added
 - "good" and "bad" rating render feature added
+
+### v1.1.3
+- posts styles fix
+- voting buttons size now larger
+- fixed login popup z-index
+- links in post-name and chat user-names size fix

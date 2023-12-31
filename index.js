@@ -24,7 +24,7 @@ class Post {
         `<div class="post">
             <div class="post-header-wrapper">
                 <div class="post-header">
-                    <a href="#" class="post-name">${this.postName}</a>
+                    <span class="post-name"><a href="#">${this.postName}</a></span>
                     <span class="post-info">
                         Автор: <a href="#">${this.postAuthor}</a> от <a href="#">${this.postDate}</a>, просмотров: ${this.postViews}
                     </span>
