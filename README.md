@@ -22,3 +22,6 @@ Revival of former greatness
 - post class update - new values added
 - footer contacts links now clickable
 - history.replaceState feature testing (attempt to replace url-address)
+
+### v1.1.1.1
+- history.replaceState feature minor fixes
