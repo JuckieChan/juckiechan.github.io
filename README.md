@@ -17,3 +17,8 @@ Revival of former greatness
 ### v1.1
 - post styles and html major update
 - voting feature pre-initial
+
+### v1.1.1
+- post class update - new values added
+- footer contacts links now clickable
+- history.replaceState feature testing (attempt to replace url-address)

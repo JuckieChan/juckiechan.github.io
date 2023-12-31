@@ -138,9 +138,20 @@ header, footer {
     padding: 6px;
 }
 
-.contacts {
+.contacts{
     margin-left: auto;
     text-align: right;
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts a {
+    color: white;
+    text-decoration: none;
+}
+
+.contacts a:hover {
+    text-decoration: underline;
 }
 
 body {
@@ -241,29 +252,7 @@ body {
     border-radius: 8px;
 }
 
-/* <div class="post">
-    <div class="post-header-wrapper">
-        <div class="post-header">
-            <a href="#" class="post-name">Название поста</a>
-            <a href="#" class="post-info">Автор: <a href="#">${this.postAuthor}</a> от <a href="#">${this.postDate}</a>, просмотров: 1</a>
-        </div>
-        <div class="post-comments">20</div>
-    </div>
-        
-    <div class="post-content">
-        ${this.postContent}
-    </div>
-
-    <div class="post-footer">
-        <div class="post-rating">
-            <button>-</button> +2 <button>+</button>
-        </div>
-        <a href="#" class="details">Подробнее</a>
-    </div>
-
-    <div class="post-category">> Категория: Новости</div>
-</div> */
-
+/* posts */
 
 .post-wrapper:not(:last-child) {
     border-bottom: 1px solid var(--border);

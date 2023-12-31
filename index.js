@@ -3,12 +3,15 @@
 // ----------------------------------------------------------------------------------------------------------
 
 class Post {
-    constructor (postName, postAuthor, postDate, postContent, postCategorys) {
+    constructor (postName, postAuthor, postDate, postContent, postCategories, postCommentsCounter = 0, postRating = 0, isPinned = false) {
         this.postName = postName;
         this.postAuthor = postAuthor;
         this.postDate = postDate; // dd.mm.yyyy, hh:mm
         this.postContent = postContent;
-        this.postCategorys = postCategorys;
+        this.postCategories = postCategories;
+        this.postCommentsCounter = postCommentsCounter;
+        this.postRating = postRating >= 0 ? "+" + postRating : postRating;
+        this.isPinned = isPinned;
     }
 
     renderPost () {
@@ -23,21 +26,22 @@ class Post {
                         Автор: <a href="#">${this.postAuthor}</a> от <a href="#">${this.postDate}</a>, просмотров: 1
                     </span>
                 </div>
-                <div class="post-comments">20</div>
+                <div class="post-comments">${this.postCommentsCounter}</div>
             </div>
             <div class="post-content">
                 ${this.postContent}
             </div>
             <div class="post-footer">
                 <div class="post-rating">
-                    <button class="post-rating-down"></button>+20<button class="post-rating-up"></button>
+                    <button class="post-rating-down"></button>${this.postRating}<button class="post-rating-up"></button>
                 </div>
                 <a href="#" class="post-details">Подробнее</a>
             </div>
-            <div class="post-category">> Категория: ${this.postCategorys}</div>
+            <div class="post-category">> Категория: ${this.postCategories}</div>
         </div>`;
         
-        document.querySelector(".posts").prepend(postWrapper)
+        const posts = document.querySelector(".posts")
+        this.isPinned ? posts.prepend(postWrapper) : posts.insertBefore(postWrapper, posts.firstChild.nextSibling);
     }
 }
 
@@ -64,9 +68,11 @@ const zeroPost = new Post("Нулевой пост", "JuckieChan", "23.11.2023",
     познакомиться по
     <a href="https://terraria-game.fandom.com/ru/wiki/%D0%91%D0%BB%D0%BE%D0%B3_%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%D0%B0:MaXXshaRd/%D0%96%D0%B8%D0%B7%D0%BD%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BF%D1%83%D1%82%D1%8C_TerrariaGO,_%D0%B8%D0%BB%D0%B8_%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F_%D1%80%D0%B0%D1%81%D1%86%D0%B2%D0%B5%D1%82%D0%B0_%D0%B8_%D1%83%D0%BF%D0%B0%D0%B4%D0%BA%D0%B0_RU_%D0%BA%D0%BE%D0%BC%D1%8C%D1%8E%D0%BD%D0%B8%D1%82%D0%B8_%D0%A2%D0%B5%D1%80%D1%80%D0%B0%D1%80%D0%B8%D0%B8.">ссылке</a>.
     </p>`,
-    "Новости, Новичкам")
+    "Новости, Новичкам", 4, 20, true)
 
-const testPost = new Post("Название тестового поста", "JuckieChan", "30.12.2023", "Тут ничего не будет, всего лишь тестовый пост. Просто для того, чтобы немного забить пустующее место бессвязным набором слов и для отладки not(:last-child). Только и всего. Никакого лорема, только рукописный текст, только хардкор.", "Отладка")
+const testPost = new Post("Название тестового поста", "JuckieChan", "30.12.2023", "Тут ничего не будет, всего лишь тестовый пост. Просто для того, чтобы немного забить пустующее место бессвязным набором слов и для отладки not(:last-child). Только и всего. Никакого лорема, только рукописный текст, только хардкор.", "Отладка", 1, 2)
+const testPost2 = new Post("Название тестового поста 2", "JuckieChan", "31.12.2023", "Тут ничего не будет, всего лишь тестовый пост. Просто для того, чтобы немного забить пустующее место бессвязным набором слов и для отладки not(:last-child). Только и всего. Никакого лорема, только рукописный текст, только хардкор.", "Отладка", 4, -1)
 
-testPost.renderPost();
 zeroPost.renderPost();
+testPost.renderPost();
+testPost2.renderPost();
