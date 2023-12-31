@@ -25,3 +25,7 @@ Revival of former greatness
 
 ### v1.1.1.1
 - history.replaceState feature minor fixes
+
+### v1.1.1.2
+- history.replaceState feature removed
+- index.html absolute paths fixes
