@@ -29,3 +29,7 @@ Revival of former greatness
 ### v1.1.1.2
 - history.replaceState feature removed
 - index.html absolute paths fixes
+
+### v1.1.2
+- voting feature added
+- "good" and "bad" rating render feature added

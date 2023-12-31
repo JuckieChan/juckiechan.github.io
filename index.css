@@ -362,16 +362,22 @@ body {
     margin-right: 4px;
 }
 
-.post-rating {
+.post-rating-pinned {
     border: 1px solid #006090;
     box-shadow: inset 0 1px #66bde8;
     background: #4385b4;
 }
 
-.post-details {
+.post-rating-good, .post-details {
     border: 1px solid #283b22;
     box-shadow: inset 0 1px #409925;
     background: #005428;
+}
+
+.post-rating-bad {
+    border: 1px solid #343833;
+    box-shadow: inset 0 1px #a7b8a2;
+    background: #5c6661;
 }
 
 .post-details:hover {
